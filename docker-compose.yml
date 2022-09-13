@@ -1,0 +1,39 @@
+version: "3"
+services:
+    db:
+        image: postgres
+        container_name: db
+        healthcheck:
+            test: [ "CMD-SHELL", "pg_isready -d puma -U pumaadmin" ]
+        environment:
+            POSTGRES_PASSWORD: pumaadmin
+            POSTGRES_USER: pumaadmin
+            POSTGRES_DB: puma
+            DATABASE_URL: postgres://pumaadmin:pumaadmin@db:5432/puma
+        volumes:
+            - ./dbdata:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        networks:
+            - puma-network
+    project-service:
+        container_name: project-service
+        environment:
+            ENVIRONMENT: dev
+        build:
+            context: .
+            dockerfile: test.Dockerfile
+        ports:
+            - "3000:3000"
+        depends_on:
+            db:
+                condition: service_healthy
+        volumes:
+            - /app/node_modules
+        command: bash -c "npm run start-dev"
+        networks:
+            - puma-network
+
+networks:
+    puma-network:            
+        driver: bridge
