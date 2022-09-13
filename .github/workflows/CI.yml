@@ -20,10 +20,7 @@ jobs:
       with:
         node-version: 14.x
 
-    - name: Docker up
-      run: docker-compose up --build 
-
-    - name: Run test
+    - name: Docker run
       run: docker-compose run project-service bash -c "npm run test --forceExit"
 
     - name: SonarCloud Scan
