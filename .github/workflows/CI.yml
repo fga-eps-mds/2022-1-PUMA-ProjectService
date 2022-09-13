@@ -21,8 +21,8 @@ jobs:
       with:
         node-version: 14.x
 
-    - name: Run npm install
-      run: npm install
+    - name: Docker run
+      run: docker-compose run project-service bash -c "npm run test-debug --forceExit"
 
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
