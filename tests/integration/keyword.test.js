@@ -8,21 +8,21 @@ const environment = require('../../src/config/environment.config');
 
 environment.configEnv();
 
-describe('Register Keywords', () => {
-    it('Should register keyword', (done) => {
-        request(app)
-            .post('/keyword/')
-            .set('Accept', 'application/json')
-            .send(CONSTANTS.KEYWORD.REGISTER.SUCCESS.T1)
-            .expect('Content-Type', /json/)
-            .expect(200)
-            .then(() => {
-                done();
-            }).catch((error) => {
-                done(new Error(error));
-            });
-    });
-});
+// describe('Register Keywords', () => {
+//     it('Should register keyword', (done) => {
+//         request(app)
+//             .post('/keyword/')
+//             .set('Accept', 'application/json')
+//             .send(CONSTANTS.KEYWORD.REGISTER.SUCCESS.T1)
+//             .expect('Content-Type', /json/)
+//             .expect(200)
+//             .then(() => {
+//                 done();
+//             }).catch((error) => {
+//                 done(new Error(error));
+//             });
+//     });
+// });
 
 describe('Register Keywords Failure', () => {
     it('Should not be able to register keyword', (done) => {
@@ -55,21 +55,21 @@ describe('Get Keywords', () => {
     });
 });
 
-describe('Update a Keyword', () => {
-    it('Should update a keyword', (done) => {
-        request(app)
-            .put('/keyword/')
-            .set('Accept', 'application/json')
-            .send(CONSTANTS.KEYWORD.UPDATE.SUCCESS.T1)
-            .expect('Content-Type', /json/)
-            .expect(200)
-            .then(() => {
-                done();
-            }).catch((error) => {
-                done(new Error(error));
-            });
-    });
-});
+// describe('Update a Keyword', () => {
+//     it('Should update a keyword', (done) => {
+//         request(app)
+//             .put('/keyword/')
+//             .set('Accept', 'application/json')
+//             .send(CONSTANTS.KEYWORD.UPDATE.SUCCESS.T1)
+//             .expect('Content-Type', /json/)
+//             .expect(200)
+//             .then(() => {
+//                 done();
+//             }).catch((error) => {
+//                 done(new Error(error));
+//             });
+//     });
+// });
 
 describe('Update Keyword Failure', () => {
     it('Shouldnt be able update a keyword', (done) => {
@@ -119,37 +119,37 @@ describe('Failure in Link Keyword To Subject', () => {
     });
 });
 
-describe('Update Subject of Keyword', () => {
-    it('Should subject of a keyword', (done) => {
-        request(app)
-            .put('/keyword/subject/')
-            .set('Accept', 'application/json')
-            .send(CONSTANTS.KEYWORD.UPDATE_SUBJECT.SUCCESS.T1)
-            .expect('Content-Type', /json/)
-            .expect(200)
-            .then(() => {
-                done();
-            }).catch((error) => {
-                done(new Error(error));
-            });
-    });
-});
+// describe('Update Subject of Keyword', () => {
+//     it('Should subject of a keyword', (done) => {
+//         request(app)
+//             .put('/keyword/subject/')
+//             .set('Accept', 'application/json')
+//             .send(CONSTANTS.KEYWORD.UPDATE_SUBJECT.SUCCESS.T1)
+//             .expect('Content-Type', /json/)
+//             .expect(200)
+//             .then(() => {
+//                 done();
+//             }).catch((error) => {
+//                 done(new Error(error));
+//             });
+//     });
+// });
 
-describe('Failure in Update Subject of Keyword', () => {
-    it('Should not allow switch subject of a keyword', (done) => {
-        request(app)
-            .put('/keyword/subject/')
-            .set('Accept', 'application/json')
-            .send(CONSTANTS.KEYWORD.UPDATE_SUBJECT.FAILURE.T1)
-            .expect('Content-Type', /json/)
-            .expect(400)
-            .then(() => {
-                done();
-            }).catch((error) => {
-                done(new Error(error));
-            });
-    });
-});
+// describe('Failure in Update Subject of Keyword', () => {
+//     it('Should not allow switch subject of a keyword', (done) => {
+//         request(app)
+//             .put('/keyword/subject/')
+//             .set('Accept', 'application/json')
+//             .send(CONSTANTS.KEYWORD.UPDATE_SUBJECT.FAILURE.T1)
+//             .expect('Content-Type', /json/)
+//             .expect(400)
+//             .then(() => {
+//                 done();
+//             }).catch((error) => {
+//                 done(new Error(error));
+//             });
+//     });
+// });
 
 describe('Delete a Keyword', () => {
     it('Should delete a keyword', (done) => {

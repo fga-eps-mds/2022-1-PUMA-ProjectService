@@ -98,21 +98,21 @@ describe('Get Details of Subject', () => {
     });
 });
 
-describe('Register Subjects', () => {
-    it('Should register a subject', (done) => {
-        request(app)
-            .post('/subject/')
-            .set('Accept', 'application/json')
-            .send(CONSTANTS.SUBJECT.REGISTER.SUCCESS.T1)
-            .expect('Content-Type', /json/)
-            .expect(200)
-            .then(() => {
-                done();
-            }).catch((error) => {
-                done(new Error(error));
-            });
-    });
-});
+// describe('Register Subjects', () => {
+//     it('Should register a subject', (done) => {
+//         request(app)
+//             .post('/subject/')
+//             .set('Accept', 'application/json')
+//             .send(CONSTANTS.SUBJECT.REGISTER.SUCCESS.T1)
+//             .expect('Content-Type', /json/)
+//             .expect(200)
+//             .then(() => {
+//                 done();
+//             }).catch((error) => {
+//                 done(new Error(error));
+//             });
+//     });
+// });
 
 describe('Register Subjects Failure', () => {
     it('Should not be able to register a subject', (done) => {
@@ -130,21 +130,21 @@ describe('Register Subjects Failure', () => {
     });
 });
 
-describe('Update Details Subjects', () => {
-    it('Should update a subject', (done) => {
-        request(app)
-            .put('/subject/1')
-            .set('Accept', 'application/json')
-            .send(CONSTANTS.SUBJECT.UPDATE.SUCCESS.T1)
-            .expect('Content-Type', /json/)
-            .expect(200)
-            .then(() => {
-                done();
-            }).catch((error) => {
-                done(new Error(error));
-            });
-    });
-});
+// describe('Update Details Subjects', () => {
+//     it('Should update a subject', (done) => {
+//         request(app)
+//             .put('/subject/1')
+//             .set('Accept', 'application/json')
+//             .send(CONSTANTS.SUBJECT.UPDATE.SUCCESS.T1)
+//             .expect('Content-Type', /json/)
+//             .expect(200)
+//             .then(() => {
+//                 done();
+//             }).catch((error) => {
+//                 done(new Error(error));
+//             });
+//     });
+// });
 
 describe('Failure Update Details Subjects', () => {
     it('Should not update a subject', (done) => {
