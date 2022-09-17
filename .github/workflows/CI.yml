@@ -36,6 +36,9 @@ jobs:
         echo DB_DATABASE=${{ secrets.DB_DATABASE }} >> .env
         cat .env
 
+    - name: Instalar Jest
+      run:  npm install -g jest
+
     - name: Execute tests
       run:  jest --coverage --runInBand --detectOpenHandles --forceExit
 
