@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - dev
+      - teste_project_tests
   pull_request:
     types: [opened, reopened]
 
