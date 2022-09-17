@@ -1,4 +1,4 @@
-const db = require('../../dbconfig/dbConfig');
+const db = require('../config/db');
 
 module.exports = {
   getUserProposals: async (user) => {

@@ -1,4 +1,4 @@
-const db = require('../../dbconfig/dbConfig');
+const db = require('../config/db');
 
 module.exports = {
   addSubject: (input) => new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@ module.exports = {
     db.query(
       'SELECT s.subjectid, s.name FROM subject s WHERE not(s.deleted) ORDER BY s.subjectid DESC',
     ).then((response) => {
-      resolve(response.rows);
+      resolve(response);
     }).catch((e) => reject(e));
   }),
 

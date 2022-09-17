@@ -1,6 +1,6 @@
 /* eslint-disable no-multi-str */
 /* eslint-disable import/order */
-const db = require('../../dbconfig/dbConfig');
+const db = require('../config/db');
 const format = require('pg-format');
 
 module.exports = {

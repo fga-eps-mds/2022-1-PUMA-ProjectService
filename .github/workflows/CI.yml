@@ -24,6 +24,9 @@ jobs:
     - name: Run npm install
       run: npm install
 
+    - name: Execute tests
+      run:  jest --coverage --runInBand --detectOpenHandles --forceExit
+
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:

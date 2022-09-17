@@ -3,7 +3,6 @@ require('dotenv').config();
 
 module.exports = {
   configEnv: () => {
-    console.log('ENVIRONMENT:', process.env.ENVIRONMENT);
     if (process.env.ENVIRONMENT === 'dev') {
       global.URL_API = `http://${process.env.IP_ADDRESS}:3004`;
       global.SECRET = process.env.SECRET;

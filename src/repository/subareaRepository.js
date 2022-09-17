@@ -1,5 +1,5 @@
 /* eslint-disable no-multi-str */
-const db = require('../../dbconfig/dbConfig');
+const db = require('../config/db');
 
 module.exports = {
   addSubarea: (input) => new Promise((resolve, reject) => {
