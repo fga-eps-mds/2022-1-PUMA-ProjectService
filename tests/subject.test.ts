@@ -12,9 +12,10 @@ const mockProject = constants.projectMock;
 
 const app = require('../src/app');
 
-beforeAll(async () => {
+/* beforeAll(async () => {
+  console.log(process.env.DB_URL)
   shell.exec(`env user=${process.env.DB_USERNAME} db=${process.env.DB_DATABASE} sh database/db_script.sh`);
-});
+}); */
 
 describe('Test Subject requests', () => {
   test('get Subjects', async function () {

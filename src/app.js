@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
 const express = require('express');
 const cors = require('cors');
 const environment = require('./config/environment.config');
@@ -15,7 +13,6 @@ if (process.env.NODE_ENV == "test") {
 
 const corsOptions = {
   origin: `${global.URL_API}`,
-  origin: '*',
 };
 app.use(cors(corsOptions));
 
