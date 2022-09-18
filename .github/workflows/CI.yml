@@ -28,6 +28,7 @@ jobs:
     - name: Create env file
       run: |
         touch .env
+        echo IP_ADDRESS=${{ secrets.IP_ADDRESS }} >> .env
         echo SECRET=${{ secrets.SECRET }} >> .env
         echo DB_URL_TEST=${{ secrets.DB_URL_TEST }} >> .env
         echo ENVIRONMENT=${{ secrets.ENVIRONMENT }} >> .env
