@@ -13,7 +13,8 @@ const config = {
     '/__jest__/',
     '.?.d.ts',
     '/config/',
-    'index.js',
+    'app.js',
+    'server.js',
     '/service/',
     '/utils/',
     'router.js'

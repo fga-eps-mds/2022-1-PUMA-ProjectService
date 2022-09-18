@@ -2,11 +2,11 @@
   "name": "puma_project_service",
   "version": "1.0.0",
   "description": "## Node.js",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "scripts": {
-    "start-dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "test": "jest --watchAll",
+    "start-dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "jest --watchAll --detectOpenHandles",
     "coverage": "jest --coverage",
     "lint": "./node_modules/.bin/eslint ."
   },
@@ -29,7 +29,8 @@
     "express-fileupload": "^1.2.1",
     "mocha-junit-reporter": "^2.0.2",
     "pg": "^8.7.1",
-    "pg-format": "^1.0.4"
+    "pg-format": "^1.0.4",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "@types/jest": "^29.0.3",

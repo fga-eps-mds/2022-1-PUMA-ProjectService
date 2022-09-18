@@ -76,7 +76,6 @@ module.exports = {
             const response = await subjectRepository.getSubjects();
 
             let professors = null;
-            console.log(response)
             for(let i = 0; i < response.length; i++){
                 professors = await professorRepository.getProfessorsofSubject({"subjectid": response[i].subjectid});
                 response[i]["professors"] = professors;
