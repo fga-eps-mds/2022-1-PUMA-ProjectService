@@ -6,6 +6,11 @@ const configRoutes = require('./routes/router');
 const app = express();
 environment.configEnv();
 
+let db = null
+if (process.env.NODE_ENV == "dev") {
+  db = require('./config/db');
+}
+
 const corsOptions = {
   origin: `${global.URL_API}`,
 };
